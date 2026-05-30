@@ -1,8 +1,222 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #0070f3;
-  --color-sky-400: #00d4ff;
-  --font-display: "Inter", sans-serif;
-  --breakpoint-3xl: 1920px;
+  --color-paper: #E7DECB;
+  --color-paper-2: #DED3BC;
+  --color-ink: #211C16;
+  --color-ink-soft: #4A4338;
+  --color-rust: #B14F2C;
+  --color-olive: #6B6A38;
+  --color-mute: #8B8068;
+
+  --font-sans: "Newsreader", Georgia, serif;
+  --font-display: "Archivo", sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E7DECB;
+  color: #211C16;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 19px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: #B14F2C;
+  color: #E7DECB;
+}
+
+/* Scroll reveal */
+.rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.rv.in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rv {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Ledger ruled-line texture for hero thumb */
+.ledger-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 22px,
+    rgba(33, 28, 22, 0.12) 22px,
+    rgba(33, 28, 22, 0.12) 23px
+  );
+}
+
+/* Diagonal hatch for image placeholders */
+.ph-hatch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #DED3BC,
+    #DED3BC 8px,
+    transparent 8px,
+    transparent 17px
+  );
+}
+
+/* Animated nav underline */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  text-decoration: none;
+  color: #211C16;
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color 0.25s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: #B14F2C;
+  transition: width 0.25s ease;
+}
+.nav-link:hover {
+  color: #B14F2C;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropcap for about section */
+.dropcap {
+  float: left;
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 74px;
+  line-height: 0.7;
+  padding: 6px 10px 0 0;
+  color: #B14F2C;
+}
+
+/* Outline text (used in Resume heading) */
+.text-outline {
+  -webkit-text-stroke: 2px #211C16;
+  color: transparent;
+}
+
+/* Project row hover */
+.proj-row {
+  transition: background 0.2s ease;
+}
+.proj-row:hover {
+  background: #DED3BC;
+}
+
+/* Tech stack list item with animated chevron */
+.tech-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 0;
+  cursor: default;
+  transition: color 0.15s, transform 0.15s;
+}
+.tech-item::before {
+  content: "›";
+  color: #6B6A38;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: transform 0.15s, color 0.15s;
+}
+.tech-item:hover {
+  color: #B14F2C;
+}
+.tech-item:hover::before {
+  transform: translateX(3px);
+  color: #B14F2C;
+}
+
+/* Buttons */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #211C16;
+  color: #E7DECB;
+  padding: 16px 26px;
+  text-decoration: none;
+  border: 2px solid #211C16;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn-solid:hover {
+  background: #B14F2C;
+  border-color: #B14F2C;
+  transform: translate(-2px, -2px);
+}
+.btn-solid .arr {
+  transition: transform 0.2s;
+}
+.btn-solid:hover .arr {
+  transform: translateX(4px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: transparent;
+  color: #211C16;
+  padding: 16px 26px;
+  text-decoration: none;
+  border: 2px solid #211C16;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn-ghost:hover {
+  background: #211C16;
+  color: #E7DECB;
+  transform: translate(-2px, -2px);
+}
+.btn-ghost .arr {
+  transition: transform 0.2s;
+}
+.btn-ghost:hover .arr {
+  transform: translateX(4px);
 }
