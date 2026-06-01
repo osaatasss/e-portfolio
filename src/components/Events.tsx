@@ -2,12 +2,6 @@ import Placeholder from './Placeholder';
 
 const EVENTS = [
   {
-    type: 'Conference',
-    date: '[ Date ]',
-    title: 'Backend & Cloud Conf',
-    desc: 'Two days of talks on distributed systems and event-driven architecture. Came home with a notebook full of queue patterns I immediately tried to over-apply.',
-  },
-  {
     type: 'Hackathon',
     date: '12 nov 2025 ',
     title: 'Hack The Future Antwerp',
@@ -16,16 +10,35 @@ const EVENTS = [
         'I engineered an operational dashboard capable of processing real-time environmental data and orchestrating recovery workflows, demonstrating rapid problem-solving and full-stack adaptability.',
   },
   {
-    type: 'Meetup',
-    date: '[ Date ]',
-    title: '.NET User Group',
-    desc: 'A local evening meetup on C# and the modern .NET ecosystem. Good talks, better hallway conversations about how people actually run things in production.',
+    type: 'Tech & Meet',
+    date: '2025',
+    title: 'DeepSeek Uncovered ',
+    desc: 'Attending the "DeepSeek Uncovered" session at HOWEST with Dimitri Casier offered an eye-opening look at China’s open-source challenger to GPT-4. ' +
+        'The live demos of its reasoning and code-generation capabilities highlighted exactly how fast the software engineering landscape is shifting. ' +
+        'What resonated most was the broader discussion on AI ethics, transparency, and geopolitical competition. ' +
+        'As a Software Engineering student, staying tuned into these major tech trends is essential for shaping my future career.',
   },
   {
-    type: 'Workshop',
-    date: '[ Date ]',
-    title: 'Docker & Containers Workshop',
-    desc: 'A hands-on day containerising real apps and untangling networking. The session that finally made multi-service local setups click for me.',
+    type: 'Tech & Meet',
+    date: '2025',
+    title: "The Birth of NATO's Cyber Defense",
+    desc: 'On December 2nd last year, I attended the HOWEST Tech & Meet session on the birth of NATO’s Cyber Defence, presented by Martin De Pauw. ' +
+        'The talk highlighted how cybersecurity evolved from a niche technical issue into a borderless, global necessity that affects everyone today. ' +
+        'It was fascinating to learn how NATO officially recognized cyberspace as an operational domain in 2016, alongside land, sea, and air. ' +
+        'Hearing about the vital collaboration between military and civilian experts perfectly illustrated the sheer complexity of modern cyber resilience.',
+  },
+  {
+    type: 'Tech & Meet',
+    date: '2025',
+    title: 'The Wonderful World of IPv6',
+    desc: 'On November 25th last year, I attended a HOWEST meetup focused on the critical transition from IPv4 to IPv6. ' +
+        'The session offered great insight into modern networking infrastructure, detailing the necessity of IPv6, migration challenges, and how companies handle the switchover today.',
+  },
+  {
+    type: 'Tech & Meet',
+    date: '2025',
+    title: 'DeepSeek Uncovered ',
+    desc: 'A local evening meetup on C# and the modern .NET ecosystem. Good talks, better hallway conversations about how people actually run things in production.',
   },
 ];
 

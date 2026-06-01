@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robert Mihai Apostol — Portfolio Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#E7DECB;
+    --ink:#211C16;
+    --rust:#B14F2C;
+    --olive:#6B6A38;
+    --ochre:#CC9433;
+    --mute:#8B8068;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Space Mono",monospace;-webkit-font-smoothing:antialiased;line-height:1.5}
+  ::selection{background:var(--rust);color:var(--cream)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 36px}
+
+  .top{border-bottom:2px solid var(--ink);padding:16px 0}
+  .top .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+  .top .brand{font-family:"Space Mono";font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.06em}
+  .top .meta{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--mute)}
+
+  header{padding:64px 0 48px;border-bottom:2px solid var(--ink)}
+  .kick{font-size:12px;text-transform:uppercase;letter-spacing:0.16em;color:var(--rust);margin-bottom:18px}
+  h1{font-family:"Archivo";font-weight:900;font-size:clamp(40px,8vw,92px);text-transform:uppercase;line-height:0.9;letter-spacing:-0.02em;margin-bottom:24px}
+  .intro{font-size:clamp(16px,2vw,20px);max-width:62ch;line-height:1.5;color:var(--ink)}
+  .intro b{color:var(--rust)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:56px 0 72px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+
+  .card{display:flex;flex-direction:column;text-decoration:none;color:inherit;border:2px solid var(--ink);background:var(--cream);transition:transform .2s ease,box-shadow .2s ease}
+  .card:hover{transform:translate(-5px,-5px);box-shadow:10px 10px 0 var(--ink)}
+  .thumb{height:200px;border-bottom:2px solid var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
+  .thumb .big{font-family:"Anton";text-transform:uppercase;line-height:0.82;font-size:46px}
+  .thumb .sub{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;margin-top:8px}
+
+  /* A — ledger */
+  .t-a{background:var(--cream)}
+  .t-a .big{color:var(--ink)}
+  .t-a .big em{color:var(--rust);font-style:normal}
+  .t-a .sub{color:var(--mute)}
+  .t-a::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 22px,rgba(33,28,22,0.12) 22px,rgba(33,28,22,0.12) 23px)}
+  /* B — terminal */
+  .t-b{background:#22241A}
+  .t-b .big{color:#E7E0CB;font-family:"Space Mono";font-weight:700;font-size:30px;letter-spacing:-0.01em}
+  .t-b .big .c{color:#CF6A3A}
+  .t-b .sub{color:#A6A85A}
+  .t-b::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.18) 0,rgba(0,0,0,0.18) 1px,transparent 1px,transparent 3px)}
+  /* C — poster */
+  .t-c{background:var(--rust)}
+  .t-c .big{color:var(--cream)}
+  .t-c .big .s{-webkit-text-stroke:1.5px var(--cream);color:transparent}
+  .t-c .sub{color:var(--ochre)}
+  .t-c::after{content:"";position:absolute;top:-30px;right:-30px;width:110px;height:110px;background:var(--ochre);border-radius:50%}
+
+  .cbody{padding:22px;flex:1;display:flex;flex-direction:column;gap:12px}
+  .cbody .label{display:flex;align-items:center;gap:10px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em}
+  .cbody .label .tag{background:var(--ink);color:var(--cream);padding:3px 8px;font-weight:700}
+  .cbody h3{font-family:"Archivo";font-weight:800;font-size:24px;text-transform:uppercase;line-height:1}
+  .cbody p{font-size:14px;color:var(--ink);line-height:1.5}
+  .swatches{display:flex;gap:6px;margin-top:auto}
+  .swatches i{width:22px;height:22px;border:1.5px solid var(--ink);display:block}
+  .cbody .go{display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--rust);margin-top:4px}
+  .card:hover .go{color:var(--ink)}
+  .card:hover .go .arr{transform:translateX(4px)}
+  .go .arr{transition:transform .2s}
+
+  footer{border-top:2px solid var(--ink);padding:26px 0;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--mute)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <span class="brand">R.M.A — Portfolio Studio</span>
+    <span class="meta">3 directions · pick one to develop</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="kick">Robert Mihai Apostol · E-Portfolio</div>
+    <h1>Three ways to<br>show the work.</h1>
+    <p class="intro">Same content, same earthy-retro palette — three brutalist-editorial treatments. Open each, scroll the whole thing, then tell me which to push forward (or mix). <b>Every photo is a labeled placeholder</b> ready for your real shots.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+
+    <a class="card" href="Ledger.html">
+      <div class="thumb t-a">
+        <div class="big">The<br><em>Ledger</em></div>
+        <div class="sub">Archivo · Newsreader · Space Mono</div>
+      </div>
+      <div class="cbody">
+        <span class="label"><span class="tag">A</span> Editorial / print</span>
+        <h3>Ledger</h3>
+        <p>A newspaper laid out by an engineer. Ruled column grids, numbered sections, a drop-cap and a dateline. Calm, confident, very readable.</p>
+        <div class="swatches"><i style="background:#E7DECB"></i><i style="background:#211C16"></i><i style="background:#B14F2C"></i><i style="background:#6B6A38"></i></div>
+        <span class="go">Open direction <span class="arr">→</span></span>
+      </div>
+    </a>
+
+    <a class="card" href="Terminal.html">
+      <div class="thumb t-b">
+        <div class="big"><span class="c">$</span> rma<br>--portfolio</div>
+        <div class="sub">JetBrains Mono · Space Grotesk</div>
+      </div>
+      <div class="cbody">
+        <span class="label"><span class="tag">B</span> Dark spec-sheet</span>
+        <h3>Terminal</h3>
+        <p>A dark olive command-line feel — mono everywhere, repo-style project cards, scanline texture, a blinking cursor. Speaks fluent backend.</p>
+        <div class="swatches"><i style="background:#22241A"></i><i style="background:#E7E0CB"></i><i style="background:#CF6A3A"></i><i style="background:#A6A85A"></i></div>
+        <span class="go">Open direction <span class="arr">→</span></span>
+      </div>
+    </a>
+
+    <a class="card" href="Poster.html">
+      <div class="thumb t-c">
+        <div class="big">Poster<br><span class="s">Block</span></div>
+        <div class="sub">Anton · Space Mono</div>
+      </div>
+      <div class="cbody">
+        <span class="label"><span class="tag">C</span> Bold color blocks</span>
+        <h3>Poster</h3>
+        <p>The loud one. Full-bleed color sections, oversized Anton type, a scrolling tech marquee. Most personality, most memorable.</p>
+        <div class="swatches"><i style="background:#BC5331"></i><i style="background:#5F5E2E"></i><i style="background:#CC9433"></i><i style="background:#EAE1CC"></i></div>
+        <span class="go">Open direction <span class="arr">→</span></span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Robert Mihai Apostol</span>
+    <span>Earthy retro · Brutalist editorial</span>
+  </div>
+</footer>
+
+</body>
+</html>

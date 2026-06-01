@@ -36,8 +36,7 @@ const About = () => (
             and the occasional FastAPI service.
           </p>
           <p className="text-[22px] leading-[1.5] max-w-[46ch]">
-            In my free time I ride my motorcycle, play football, and work on
-            side projects.
+            Outside of work, I enjoy riding my motorcycle, playing football, and developing side projects.
           </p>
         </div>
 
