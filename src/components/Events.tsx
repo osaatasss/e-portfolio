@@ -1,7 +1,7 @@
 import Placeholder from './Placeholder';
 import HTF from './../assets/HTF.jpg';
 import deepSeek from './../assets/deepseek.jpg';
-import nato from './../assets/nato-cybersec.jpg';
+import natoCybersec from './../assets/nato-cybersec.jpg';
 import ipv6 from './../assets/ipv6.png';
 
 const EVENTS = [
@@ -32,7 +32,7 @@ const EVENTS = [
         'The talk highlighted how cybersecurity evolved from a niche technical issue into a borderless, global necessity that affects everyone today. ' +
         'It was fascinating to learn how NATO officially recognized cyberspace as an operational domain in 2016, alongside land, sea, and air. ' +
         'Hearing about the vital collaboration between military and civilian experts perfectly illustrated the sheer complexity of modern cyber resilience.',
-    img:nato,
+    img:natoCybersec,
   },
   {
     type: 'Tech & Meet',
