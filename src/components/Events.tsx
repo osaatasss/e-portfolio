@@ -1,7 +1,7 @@
 import Placeholder from './Placeholder';
 import HTF from './../assets/HTF.jpg';
 import deepSeek from './../assets/deepseek.jpg';
-import natoCybersec from './../assets/nato-cybersec.jpg';
+import natoCybersec from './../assets/nato-cybersec.jpeg';
 import ipv6 from './../assets/ipv6.png';
 
 const EVENTS = [
