@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import useScrollReveal from './hooks/useScrollReveal';
 import Topbar from './components/Topbar';
 import Hero from './components/Hero';
@@ -23,6 +24,7 @@ const App = () => {
       <Experience />
       <Resume />
       <Footer />
+      <Analytics />
     </>
   );
 };
