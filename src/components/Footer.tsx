@@ -2,6 +2,13 @@ const Footer = () => (
   <footer className="border-t-2 border-ink py-[30px]">
     <div className="max-w-[1180px] mx-auto px-8 flex justify-between gap-4 flex-wrap font-mono text-[11px] uppercase tracking-[0.06em] text-mute">
       <span>© 2026 Robert Mihai Apostol</span>
+      <a
+        href="mailto:robert.apostol11@gmail.com"
+        className="text-ink no-underline border-b border-rust hover:text-rust transition-colors duration-200"
+        aria-label="Email"
+      >
+        robert.apostol11@gmail.com
+      </a>
       <span>
         <a
           href="https://github.com/osaatasss"

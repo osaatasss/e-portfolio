@@ -13,6 +13,7 @@ const EVENTS = [
         'I developed a full-stack solution under strict time constraints. Using TypeScript, a Node.js middleware framework, and a frontend MVC architecture, ' +
         'I engineered an operational dashboard capable of processing real-time environmental data and orchestrating recovery workflows, demonstrating rapid problem-solving and full-stack adaptability.',
     img:HTF,
+    imgLabel: 'Hackathon',
   },
   {
     type: 'Tech & Meet',
@@ -23,6 +24,7 @@ const EVENTS = [
         'What resonated most was the broader discussion on AI ethics, transparency, and geopolitical competition. ' +
         'As a Software Engineering student, staying tuned into these major tech trends is essential for shaping my future career.',
     img:deepSeek,
+    imgLabel: 'ChatGPT Killer?',
   },
   {
     type: 'Tech & Meet',
@@ -33,6 +35,7 @@ const EVENTS = [
         'It was fascinating to learn how NATO officially recognized cyberspace as an operational domain in 2016, alongside land, sea, and air. ' +
         'Hearing about the vital collaboration between military and civilian experts perfectly illustrated the sheer complexity of modern cyber resilience.',
     img:natoCybersec,
+    imgLabel: 'NATO Cyber Defense pledge',
   },
   {
     type: 'Tech & Meet',
@@ -40,7 +43,8 @@ const EVENTS = [
     title: 'The Wonderful World of IPv6',
     desc: 'On November 25th last year, I attended a HOWEST meetup focused on the critical transition from IPv4 to IPv6. ' +
         'The session offered great insight into modern networking infrastructure, detailing the necessity of IPv6, migration challenges, and how companies handle the switchover today.',
-    img:ipv6
+    img:ipv6,
+    imgLabel: 'IPv6 transition',
   },
 ];
 
@@ -60,10 +64,10 @@ const Events = () => (
       </div>
 
       <div className="rv grid grid-cols-1 md:grid-cols-2 border-t border-l border-ink">
-        {EVENTS.map(({ type, date, title, desc, img }) => (
+        {EVENTS.map(({ type, date, title, desc, img, imgLabel }) => (
           <article key={title} className="border-r border-b border-ink">
             <div className="border-b-[1.5px] border-ink">
-              <Placeholder label="drop: event photo" minHeight={200} image={img} />
+              <Placeholder label={imgLabel} minHeight={200} image={img} />
             </div>
             <div className="px-[22px] pt-[20px] pb-[26px]">
               <div className="font-mono text-[11px] tracking-[0.06em] uppercase text-rust mb-2 flex justify-between">

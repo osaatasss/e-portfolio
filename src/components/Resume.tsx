@@ -18,7 +18,7 @@ const Resume = () => (
         <a href="/cv.pdf" className="btn-solid" download="Robert_Apostol_CV.pdf" aria-label="Download résumé PDF">
           Download CV <span className="arr">↓</span>
         </a>
-        <a href="mailto:robert.apostol@student.howest.be" className="btn-ghost" aria-label="Send email">
+        <a href="mailto:robert.apostol11@gmail.com" className="btn-ghost" aria-label="Send email">
           Email me <span className="arr">→</span>
         </a>
       </div>
