@@ -1,6 +1,6 @@
 const META_CELLS = [
   { lab: 'Discipline', val: 'APIs and Frontends'          },
-  { lab: 'Currently',  val: 'Looking for a job as a full-stack engineer'   },
+  { lab: 'Currently',  val: 'Looking for a job as a full-stack developer'   },
   { lab: 'Status',     val: 'Open to job offers'             },
 ];
 

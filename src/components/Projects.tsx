@@ -22,20 +22,6 @@ const PROJECTS = [
     ph: 'Futbololo match simulator',
     image:futbololoLeagues,
   },
-  {
-    num: 'P/03',
-    title: 'Insight Dashboard',
-    desc: 'A Vue + TypeScript frontend on top of a FastAPI service — proof I can come out of the backend cave and ship a UI when the situation demands it.',
-    tags: ['Vue', 'TypeScript', 'FastAPI'],
-    ph: 'drop: screenshot',
-  },
-  {
-    num: 'P/04',
-    title: 'Blazor Admin Console',
-    desc: 'An internal admin tool written in Blazor so I could share C# models end-to-end. One language, full stack, fewer surprises at the boundary.',
-    tags: ['Blazor', 'ASP.NET Core', 'SQL'],
-    ph: 'drop: screenshot',
-  },
 ];
 
 const Projects = () => (

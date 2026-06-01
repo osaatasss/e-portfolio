@@ -15,7 +15,7 @@ const Resume = () => (
       </p>
 
       <div className="flex gap-[14px] flex-wrap">
-        <a href="#" className="btn-solid" download aria-label="Download résumé PDF">
+        <a href="/cv.pdf" className="btn-solid" download="Robert_Apostol_CV.pdf" aria-label="Download résumé PDF">
           Download CV <span className="arr">↓</span>
         </a>
         <a href="mailto:robert.apostol@student.howest.be" className="btn-ghost" aria-label="Send email">
