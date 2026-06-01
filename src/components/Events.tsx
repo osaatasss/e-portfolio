@@ -60,10 +60,10 @@ const Events = () => (
       </div>
 
       <div className="rv grid grid-cols-1 md:grid-cols-2 border-t border-l border-ink">
-        {EVENTS.map(({ type, date, title, desc }) => (
+        {EVENTS.map(({ type, date, title, desc, img }) => (
           <article key={title} className="border-r border-b border-ink">
             <div className="border-b-[1.5px] border-ink">
-              <Placeholder label="drop: event photo" minHeight={200} />
+              <Placeholder label="drop: event photo" minHeight={200} image={img} />
             </div>
             <div className="px-[22px] pt-[20px] pb-[26px]">
               <div className="font-mono text-[11px] tracking-[0.06em] uppercase text-rust mb-2 flex justify-between">
