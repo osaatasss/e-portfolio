@@ -42,11 +42,11 @@ const ro: Messages = {
     live: 'live!',
     ownSaas: 'SaaS-ul meu',
     devices: {
-      olisAlt: "Meniul Oli's House pe un telefon",
+      olisAlt: "Pagina principală Oli's House pe un telefon",
       olisRole: 'Site de restaurant',
-      serveopsAlt: 'Pagina de comenzi ServeOps pe un laptop',
+      serveopsAlt: 'Pagina principală ServeOps pe un laptop',
       serveopsRole: 'Platformă de comenzi pentru restaurante',
-      balkanAlt: 'Site-ul Balkan Donner pe un telefon',
+      balkanAlt: 'Meniul Balkan Donner pe un telefon',
       balkanRole: 'Site pentru o shaormerie',
     },
     facts: {
@@ -228,7 +228,7 @@ const ro: Messages = {
     stageAbove: 'Studiu de caz',
     note: { line1: 'o platformă,', line2: 'multe restaurante' },
     laptopAlt: 'Pagina principală ServeOps pe un laptop',
-    phoneAlt: 'Un client plasează o comandă prin ServeOps pe telefon',
+    phoneAlt: 'Pagina principală ServeOps pe un telefon',
     intro:
       'O platformă de comenzi pentru restaurante cu livrare și servire la masă. Clienții comandă online, restaurantul primește comanda. Construită pe .NET, PostgreSQL și PostGIS.',
     visit: 'Vizitează serveops.be',

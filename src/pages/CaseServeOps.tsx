@@ -14,6 +14,8 @@ import { Phone } from '../components/layout/Stage';
 import { COPYRIGHT, EMAIL, ROUTES, SOCIAL } from '../config/routes';
 import { caseFacts, caseFooterLinks, caseMenuLinks, caseNavLinks } from '../data/serveops';
 import { useI18n } from '../i18n/context';
+import serveopsLaptop from '../assets/screens/serveops-laptop.webp';
+import serveopsPhone from '../assets/screens/serveops-phone.webp';
 
 const CaseContact = () => {
   const { t } = useI18n();
@@ -66,10 +68,10 @@ const CaseServeOps = () => {
           </Note>
           <div className="pf-devices is-two">
             <div className="pf-dev pf-dev-main">
-              <Figure url="serveops.be" ratio="16 / 10" alt={cs.laptopAlt} />
+              <Figure src={serveopsLaptop} url="serveops.be" ratio="16 / 10" alt={cs.laptopAlt} width={1200} height={750} />
             </div>
             <div className="pf-dev">
-              <Phone alt={cs.phoneAlt} />
+              <Phone src={serveopsPhone} alt={cs.phoneAlt} />
             </div>
           </div>
         </div>

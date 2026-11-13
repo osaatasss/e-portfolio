@@ -42,11 +42,11 @@ const nl: Messages = {
     live: 'live!',
     ownSaas: 'mijn eigen SaaS',
     devices: {
-      olisAlt: "Menu van Oli's House op een telefoon",
+      olisAlt: "Homepage van Oli's House op een telefoon",
       olisRole: 'Restaurantwebsite',
-      serveopsAlt: 'Bestelpagina van ServeOps op een laptop',
+      serveopsAlt: 'Homepage van ServeOps op een laptop',
       serveopsRole: 'Bestelplatform voor restaurants',
-      balkanAlt: 'Website van Balkan Donner op een telefoon',
+      balkanAlt: 'Menu van Balkan Donner op een telefoon',
       balkanRole: 'Website voor een shoarmazaak',
     },
     facts: {
@@ -228,7 +228,7 @@ const nl: Messages = {
     stageAbove: 'Case study',
     note: { line1: 'één platform,', line2: 'veel restaurants' },
     laptopAlt: 'Homepage van ServeOps op een laptop',
-    phoneAlt: 'Een gast plaatst een bestelling met ServeOps op een telefoon',
+    phoneAlt: 'Homepage van ServeOps op een telefoon',
     intro:
       'Een bestelplatform voor restaurants, voor levering en om ter plaatse te eten. Gasten bestellen online, het restaurant krijgt de bestelling. Gebouwd met .NET, PostgreSQL en PostGIS.',
     visit: 'Bezoek serveops.be',

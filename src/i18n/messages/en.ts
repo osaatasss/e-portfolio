@@ -40,11 +40,11 @@ const en = {
     live: 'live!',
     ownSaas: 'my own SaaS',
     devices: {
-      olisAlt: "Oli's House menu on a phone",
+      olisAlt: "Oli's House home page on a phone",
       olisRole: 'Restaurant website',
-      serveopsAlt: 'ServeOps ordering page on a laptop',
+      serveopsAlt: 'ServeOps home page on a laptop',
       serveopsRole: 'Ordering platform for restaurants',
-      balkanAlt: 'Balkan Donner website on a phone',
+      balkanAlt: 'Balkan Donner menu on a phone',
       balkanRole: 'Shaorma shop website',
     },
     facts: {
@@ -226,7 +226,7 @@ const en = {
     stageAbove: 'Case study',
     note: { line1: 'one platform,', line2: 'many restaurants' },
     laptopAlt: 'ServeOps home page on a laptop',
-    phoneAlt: 'A guest placing an order with ServeOps on a phone',
+    phoneAlt: 'ServeOps home page on a phone',
     intro:
       'An ordering platform for delivery and dine-in restaurants. Guests order online, the restaurant gets the order. Built on .NET, PostgreSQL and PostGIS.',
     visit: 'Visit serveops.be',

@@ -7,6 +7,9 @@ import { DeviceCaption, Phone } from '../layout/Stage';
 import { CV_HREF, SOCIAL } from '../../config/routes';
 import { heroFacts } from '../../data/home';
 import { useI18n } from '../../i18n/context';
+import balkanPhone from '../../assets/screens/balkan-donner-phone.webp';
+import olisPhone from '../../assets/screens/olis-house-phone.webp';
+import serveopsLaptop from '../../assets/screens/serveops-laptop.webp';
 
 const HomeHero = () => {
   const { t } = useI18n();
@@ -52,19 +55,19 @@ const HomeHero = () => {
         <div className="pf-devices">
           <div className="pf-dev">
             <Sticker style={{ top: -12, right: 4 }}>{h.live}</Sticker>
-            <Phone alt={h.devices.olisAlt} />
+            <Phone src={olisPhone} alt={h.devices.olisAlt} />
             <DeviceCaption name="Oli's House" href={SOCIAL.olis} role={h.devices.olisRole} />
           </div>
           <div className="pf-dev pf-dev-main">
             <Sticker tone="forest" style={{ top: 52, left: -14, transform: 'rotate(-7deg)' }}>
               {h.ownSaas}
             </Sticker>
-            <Figure url="serveops.be" ratio="16 / 10" alt={h.devices.serveopsAlt} />
+            <Figure src={serveopsLaptop} url="serveops.be" ratio="16 / 10" alt={h.devices.serveopsAlt} width={1200} height={750} />
             <DeviceCaption name="ServeOps" href={SOCIAL.serveops} role={h.devices.serveopsRole} />
           </div>
           <div className="pf-dev">
             <Sticker style={{ top: -12, left: 4, transform: 'rotate(-8deg)' }}>{h.live}</Sticker>
-            <Phone alt={h.devices.balkanAlt} />
+            <Phone src={balkanPhone} alt={h.devices.balkanAlt} />
             <DeviceCaption name="Balkan Donner" href={SOCIAL.balkan} role={h.devices.balkanRole} />
           </div>
         </div>
