@@ -14,6 +14,11 @@ const ro: Messages = {
     screenshotPlaceholder: 'Loc pentru o captură de ecran',
     screenshotHere: 'Aici vine o captură de ecran',
     downloadCv: 'Descarcă CV-ul meu (PDF)',
+    playVideo: 'Pornește videoclipul',
+    pauseVideo: 'Pune videoclipul pe pauză',
+    boardMore: "Vezi mai mult",
+    boardRestart: "Ia-o de la capăt",
+    boardStatus: "Pașii {range} din {total}",
   },
   tags: { website: 'Website', saas: 'Platformă SaaS', automation: 'Automatizare' },
   header: {
@@ -31,7 +36,7 @@ const ro: Messages = {
   nav: { work: 'Proiecte', how: 'Cum funcționează', studies: 'Studii', about: 'Despre mine', contact: 'Contact', home: 'Acasă' },
   hero: {
     eyebrow: 'Inginer full-stack junior',
-    status: 'Deschis la oferte de muncă',
+    status: 'Sunt deschis la oferte de muncă.',
     title: { before: 'Construiesc site-uri, platforme SaaS și ', hl: 'API-urile', after: ' din spatele lor.' },
     intro:
       'Proaspăt absolvent de Informatică Aplicată la Howest, cu un stagiu full-stack la PlayIt. De atunci am construit o platformă de comenzi pentru restaurante și două site-uri de restaurante în Roeselare. Toate trei sunt live.',
@@ -63,7 +68,7 @@ const ro: Messages = {
     title: { before: 'Lucruri pe care le-am ', hl: 'construit', after: '' },
     intro: 'Trei proiecte, toate live. Deschide un card pentru povestea completă sau mergi direct la site.',
     serveops: { summary: 'O platformă de comenzi pentru restaurante cu livrare și servire la masă.', meta: 'Live' },
-    olis: { summary: 'Site și meniu pentru o pizzerie cu grătar care servește și mâncare românească.', meta: 'Roeselare · live' },
+    olis: { summary: 'Site, o nouă identitate online și un SEO puternic pentru un restaurant din Roeselare care servește pizza și preparate românești.', meta: 'Roeselare · live' },
     balkan: { summary: 'Site pentru o shaormerie românească cu shaorma și döner.', meta: 'Roeselare · live' },
   },
   explained: {
@@ -243,24 +248,49 @@ const ro: Messages = {
     storyWord: 'poveste',
     storyLabel: 'Povestea',
     problemTitle: 'Problema',
-    problemText: '[Una sau două propoziții în cuvintele tale: cu ce se confruntau restaurantele înainte de ServeOps.]',
+    problemText: 'Restaurantele mici depindeau de platformele mari de livrare, care le luau un comision mare din fiecare comandă și păstrau pentru ele relația cu clientul. Alternativa era să ia comenzile la telefon sau pe hârtie, unde se pierd ușor și nu se vede nimic din ce se întâmplă.',
     builtTitle: 'Ce am construit',
     builtText:
-      'O platformă de comenzi pentru restaurante cu livrare și pentru restaurante obișnuite cu servire la masă. API-ul este scris în .NET, datele stau în PostgreSQL cu PostGIS, iar totul rulează pe Railway cu medii separate de staging și producție, plus un instrument de administrare pentru restaurant.',
+      'O platformă de comenzi pentru restaurante cu livrare și pentru restaurante obișnuite cu servire la masă. Fiecare restaurant primește propriul site de comenzi, iar comenzile intră direct la el, fără intermediari. API-ul este scris în .NET, datele stau în PostgreSQL cu PostGIS, iar totul rulează pe Railway cu medii separate de staging și producție, plus un instrument de administrare pentru restaurant.',
     nextTitle: 'Ce urmează',
     nextText:
       'Carduri de fidelitate cu ștampile, pe care clienții le folosesc scanând un cod QR la tejghea, cu un scaner fizic conectat direct la API. Plănuiesc să furnizez și să instalez eu scanerele pentru restaurante.',
-    toolUrl: '[url instrument de administrare]',
     toolAlt: 'Instrumentul de administrare ServeOps',
-    toolCaption: 'Instrumentul de administrare pe care restaurantele îl folosesc pentru [ce fac cu el].',
+    toolCaption: 'Instrumentul de administrare pe care restaurantele îl folosesc ca să-și gestioneze meniul, să primească și să urmărească în timp real comenzile care intră, să-și stabilească zona de livrare și să-și invite personalul.',
     buildWord: 'creat',
     buildTitle: 'Cum l-am construit',
     buildSteps: [
-      { text: 'Modelez datele', note: 'PostgreSQL + PostGIS' },
-      { text: 'Construiesc API-ul', note: '.NET' },
-      { text: 'Îl lansez', note: 'Railway, staging + prod' },
+      {
+        text: "Am ascultat problema",
+        note: "Am stat de vorbă cu restaurante cu livrare și cu restaurante cu servire la masă: cum primesc comenzile, unde se pierd și cât le costă platformele intermediare. Din discuțiile astea am scos cerințele reale: comenzi directe pe site-ul fiecărui restaurant, livrare doar într-o zonă definită de restaurant și o tablă de comenzi în timp real pentru bucătărie.",
+      },
+      {
+        text: "Am modelat datele",
+        note: "Am început cu domeniul, nu cu tabelele: meniu, opțiuni, comenzi, plăți, fidelitate, zone de livrare. Fiecare regulă de business stă în model, nu e împrăștiată prin cod. Un singur sistem servește mai multe restaurante, iar datele fiecăruia sunt izolate de ale celorlalte. Zonele de livrare sunt geometrii PostGIS.",
+      },
+      {
+        text: "Am ales stack-ul și furnizorii",
+        note: ".NET pentru API, PostgreSQL cu PostGIS pentru date, Redis pentru cache și pentru actualizările în timp real, Hangfire pentru joburile din fundal. Pentru restul am ales furnizori dedicați, ca să nu reinventez ce există deja:",
+        items: ["Google Identity Platform pentru autentificare, cu conturi separate pentru fiecare restaurant", "Stripe pentru plăți", "Google Maps pentru adrese și distanța de livrare", "Resend pentru emailuri", "Cloudflare R2 pentru imaginile din meniu", "Grafana pentru monitorizare"],
+      },
+      {
+        text: "Am construit API-ul",
+        note: "Un API REST cu reguli clare pentru erori, versiuni și limitarea numărului de cereri. Comenzile ajung în bucătărie instant, prin SignalR. Joburile din fundal, cum ar fi emailurile de confirmare sau verificarea plăților rămase neconfirmate, rulează prin Hangfire. Totul e acoperit de teste de integrare pe o bază de date PostgreSQL reală. După fiecare etapă am făcut o revizie de cod și una de securitate.",
+      },
+      {
+        text: "Am construit instrumentul de administrare",
+        note: "Panoul în care restaurantul își gestionează meniul, programul, zonele de livrare, promoțiile și personalul și urmărește comenzile în timp real. A fost gândit pentru oameni ocupați, care îl folosesc în timpul serviciului, nu în fața unui birou.",
+      },
+      {
+        text: "Am ascultat feedback-ul",
+        note: "Primele restaurante l-au folosit în condiții reale, iar ce mi-au spus a intrat direct în planul de lucru: programe împărțite pe intervale, produse doar de afișat, carduri de fidelitate pentru servirea la masă. Fiecare cerere a devenit o funcționalitate planificată, nu un patch pus în grabă.",
+      },
+      {
+        text: "L-am lansat",
+        note: "Pe Railway, cu medii separate de staging și producție. Migrările bazei de date se aplică deliberat, iar o versiune nu pornește dacă schema bazei de date nu i se potrivește. Restaurantele noi le adaug urmând un proces scris.",
+      },
     ],
-    buildFootnote: 'o platformă, multe restaurante',
+    buildFootnote: "o platformă, multe restaurante, construită împreună cu ele",
     moreWord: 'altele',
     moreEyebrow: 'Alte proiecte',
     moreTitle: { before: 'Tot construite de ', hl: 'mine', after: '' },

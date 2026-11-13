@@ -26,7 +26,9 @@ const HomeHero = () => {
       <h1 id="hero-title" className="ap-display-xl max-w-[15ch]">
         <HlText parts={h.title} />
       </h1>
-      <p className="pf-hero-intro">{h.intro}</p>
+      <p className="pf-hero-intro">
+        {h.intro} <strong className="font-semibold text-ink">{h.status}</strong>
+      </p>
       <div className="pf-actions">
         <div className="pf-actions-btns">
           <Button variant="primary" href="#work">
@@ -40,13 +42,6 @@ const HomeHero = () => {
           {t.common.downloadCv}
         </Button>
       </div>
-      <p className="mt-6 inline-flex items-center gap-2 rounded-pill bg-forest-soft px-4 py-2 text-sm font-semibold text-forest">
-        <span className="relative flex size-2" aria-hidden="true">
-          <span className="absolute inline-flex size-full rounded-pill bg-forest opacity-60 motion-safe:animate-ping" />
-          <span className="relative inline-flex size-2 rounded-pill bg-forest" />
-        </span>
-        {h.status}
-      </p>
 
       <div className="pf-stage">
         <Doodle shape="wave" width={120} height={24} style={{ left: '8%', top: -6 }} />

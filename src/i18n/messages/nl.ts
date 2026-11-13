@@ -14,6 +14,11 @@ const nl: Messages = {
     screenshotPlaceholder: 'Plaats voor een screenshot',
     screenshotHere: 'Hier komt een screenshot',
     downloadCv: 'Download mijn cv (pdf)',
+    playVideo: 'Video afspelen',
+    pauseVideo: 'Video pauzeren',
+    boardMore: "Meer bekijken",
+    boardRestart: "Opnieuw beginnen",
+    boardStatus: "Stappen {range} van {total}",
   },
   tags: { website: 'Website', saas: 'SaaS-platform', automation: 'Automatisering' },
   header: {
@@ -31,7 +36,7 @@ const nl: Messages = {
   nav: { work: 'Werk', how: 'Hoe het werkt', studies: 'Studies', about: 'Over mij', contact: 'Contact', home: 'Home' },
   hero: {
     eyebrow: 'Junior full-stack engineer',
-    status: 'Open voor jobaanbiedingen',
+    status: 'Ik sta open voor jobaanbiedingen.',
     title: { before: 'Ik bouw websites, SaaS-platformen en de ', hl: "API's", after: ' erachter.' },
     intro:
       'Net afgestudeerd in Toegepaste Informatica aan Howest, met een full-stack stage bij PlayIt achter de rug. Sindsdien bouwde ik een bestelplatform voor restaurants en twee restaurantwebsites in Roeselare. Alle drie staan ze live.',
@@ -63,7 +68,7 @@ const nl: Messages = {
     title: { before: 'Dingen die ik ', hl: 'bouwde', after: '' },
     intro: 'Drie projecten, allemaal live. Open een kaart voor het volledige verhaal, of ga meteen naar de site.',
     serveops: { summary: 'Een bestelplatform voor restaurants, voor levering en om ter plaatse te eten.', meta: 'Live' },
-    olis: { summary: 'Website en menu voor een pizza- en BBQ-zaak die ook Roemeense gerechten serveert.', meta: 'Roeselare · live' },
+    olis: { summary: 'Website, een nieuwe online identiteit en sterke SEO voor een restaurant in Roeselare dat pizza en Roemeense gerechten serveert.', meta: 'Roeselare · live' },
     balkan: { summary: 'Website voor een Roemeense shoarma- en dönerzaak.', meta: 'Roeselare · live' },
   },
   explained: {
@@ -243,24 +248,49 @@ const nl: Messages = {
     storyWord: 'verhaal',
     storyLabel: 'Het verhaal',
     problemTitle: 'Het probleem',
-    problemText: '[Eén of twee zinnen in je eigen woorden: waar restaurants mee worstelden vóór ServeOps.]',
+    problemText: 'Kleine restaurants waren afhankelijk van de grote bezorgplatformen, die op elke bestelling een hoge commissie namen en de relatie met de klant voor zichzelf hielden. Het alternatief was bestellingen aannemen via de telefoon of op papier, waar ze makkelijk verloren gaan en niemand zicht heeft op wat er gebeurt.',
     builtTitle: 'Wat ik bouwde',
     builtText:
-      'Een bestelplatform voor leverrestaurants en gewone restaurants waar je ter plaatse eet. De API is geschreven in .NET, de data zit in PostgreSQL met PostGIS, en alles draait op Railway met een aparte staging- en productieomgeving, plus een beheertool voor het restaurant.',
+      'Een bestelplatform voor leverrestaurants en gewone restaurants waar je ter plaatse eet. Elk restaurant krijgt een eigen bestelsite, en de bestellingen komen rechtstreeks bij het restaurant binnen, zonder tussenpersoon. De API is geschreven in .NET, de data zit in PostgreSQL met PostGIS, en alles draait op Railway met een aparte staging- en productieomgeving, plus een beheertool voor het restaurant.',
     nextTitle: 'Wat volgt',
     nextText:
       'Stempelkaarten die gasten inwisselen door een QR-code te scannen aan de toog, met een fysieke scanner die rechtstreeks met de API verbonden is. Ik wil de scanners ook zelf leveren en installeren bij restaurants.',
-    toolUrl: '[url van de beheertool]',
     toolAlt: 'De beheertool van ServeOps',
-    toolCaption: 'De beheertool die restaurants gebruiken om [wat ze ermee doen].',
+    toolCaption: 'De beheertool die restaurants gebruiken om hun menu te beheren, binnenkomende bestellingen in realtime te ontvangen en op te volgen, hun leverzone in te stellen en hun personeel uit te nodigen.',
     buildWord: 'gebouwd',
     buildTitle: 'Zo bouwde ik het',
     buildSteps: [
-      { text: 'Modelleer de data', note: 'PostgreSQL + PostGIS' },
-      { text: 'Bouw de API', note: '.NET' },
-      { text: 'Rol het uit', note: 'Railway, staging + prod' },
+      {
+        text: "Ik luisterde naar het probleem",
+        note: "Ik sprak met leverrestaurants en restaurants waar je ter plaatse eet: hoe ze bestellingen ontvangen, waar die verloren gaan en wat de tussenplatformen hen kosten. Uit die gesprekken haalde ik de echte vereisten: rechtstreekse bestellingen op de site van elk restaurant, levering alleen binnen een zone die het restaurant zelf bepaalt, en een realtime bestelbord voor de keuken.",
+      },
+      {
+        text: "Ik modelleerde de data",
+        note: "Ik begon bij het domein, niet bij de tabellen: menu, opties, bestellingen, betalingen, loyaliteit, leverzones. Elke bedrijfsregel zit in het model, niet verspreid door de code. Eén systeem bedient meerdere restaurants, en de data van elk restaurant is afgeschermd van de andere. De leverzones zijn PostGIS-geometrieën.",
+      },
+      {
+        text: "Ik koos de stack en de leveranciers",
+        note: ".NET voor de API, PostgreSQL met PostGIS voor de data, Redis voor caching en realtime updates, Hangfire voor achtergrondtaken. Voor de rest koos ik gespecialiseerde leveranciers, zodat ik niet opnieuw uitvind wat al bestaat:",
+        items: ["Google Identity Platform voor authenticatie, met aparte accounts per restaurant", "Stripe voor betalingen", "Google Maps voor adressen en leverafstand", "Resend voor e-mails", "Cloudflare R2 voor de menufoto's", "Grafana voor monitoring"],
+      },
+      {
+        text: "Ik bouwde de API",
+        note: "Een REST API met duidelijke regels voor fouten, versies en rate limiting. Bestellingen komen meteen in de keuken binnen via SignalR. Achtergrondtaken, zoals bevestigingsmails of het nakijken van betalingen die onbevestigd bleven, draaien via Hangfire. Alles is gedekt door integratietests op een echte PostgreSQL-databank. Na elke fase deed ik een code review en een security review.",
+      },
+      {
+        text: "Ik bouwde de beheertool",
+        note: "Het paneel waarin het restaurant zijn menu, openingsuren, leverzones, promoties en personeel beheert en de bestellingen in realtime opvolgt. Het is ontworpen voor drukke mensen die het tijdens de service gebruiken, niet achter een bureau.",
+      },
+      {
+        text: "Ik luisterde naar feedback",
+        note: "De eerste restaurants gebruikten het in echte omstandigheden, en wat ze me vertelden ging rechtstreeks in de planning: openingsuren in tijdsblokken, producten die je alleen toont, stempelkaarten voor wie ter plaatse eet. Elke vraag werd een geplande functie, geen haastige patch.",
+      },
+      {
+        text: "Ik lanceerde het",
+        note: "Op Railway, met aparte staging- en productieomgevingen. Databankmigraties worden bewust toegepast, en een release start niet als het databankschema er niet bij past. Nieuwe restaurants voeg ik toe volgens een uitgeschreven proces.",
+      },
     ],
-    buildFootnote: 'één platform, veel restaurants',
+    buildFootnote: "één platform, veel restaurants, samen met hen gebouwd",
     moreWord: 'meer',
     moreEyebrow: 'Meer werk',
     moreTitle: { before: 'Ook gebouwd door ', hl: 'mij', after: '' },

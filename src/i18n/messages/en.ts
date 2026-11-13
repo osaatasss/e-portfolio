@@ -12,6 +12,11 @@ const en = {
     screenshotPlaceholder: 'Screenshot placeholder',
     screenshotHere: 'Screenshot goes here',
     downloadCv: 'Download my CV (PDF)',
+    playVideo: 'Play video',
+    pauseVideo: 'Pause video',
+    boardMore: "See more",
+    boardRestart: "Start over",
+    boardStatus: "Steps {range} of {total}",
   },
   tags: { website: 'Website', saas: 'SaaS platform', automation: 'Automation' },
   header: {
@@ -29,7 +34,7 @@ const en = {
   nav: { work: 'Work', how: 'How it works', studies: 'Studies', about: 'About', contact: 'Contact', home: 'Home' },
   hero: {
     eyebrow: 'Junior full-stack engineer',
-    status: 'Open to job offers',
+    status: "I'm open to job offers.",
     title: { before: 'I build websites, SaaS platforms and the ', hl: 'APIs', after: ' behind them.' },
     intro:
       "Fresh out of Applied Computer Science at Howest, with a full-stack internship at PlayIt behind me. Since then I've built an ordering platform for restaurants and two restaurant websites in Roeselare. All three are live.",
@@ -61,7 +66,7 @@ const en = {
     title: { before: 'Things I ', hl: 'built', after: '' },
     intro: 'Three projects, all live. Open a card for the full story, or go straight to the site.',
     serveops: { summary: 'An ordering platform for delivery and dine-in restaurants.', meta: 'Live' },
-    olis: { summary: 'Website and menu for a pizza and BBQ place that also serves Romanian food.', meta: 'Roeselare · live' },
+    olis: { summary: 'Website, a new online identity and strong SEO for a restaurant in Roeselare serving pizza and Romanian dishes.', meta: 'Roeselare · live' },
     balkan: { summary: 'Website for a Romanian shaorma and döner shop.', meta: 'Roeselare · live' },
   },
   explained: {
@@ -241,24 +246,49 @@ const en = {
     storyWord: 'story',
     storyLabel: 'The story',
     problemTitle: 'The problem',
-    problemText: '[One or two sentences in your words: what restaurants struggled with before ServeOps.]',
+    problemText: "Small restaurants depended on the big delivery platforms, which took a hefty commission on every order and kept the relationship with the customer for themselves. The alternative was taking orders by phone or on paper, where they get lost easily and nobody can see what's going on.",
     builtTitle: 'What I built',
     builtText:
-      'An ordering platform for delivery restaurants and regular dine-in restaurants. The API is written in .NET, the data lives in PostgreSQL with PostGIS, and everything runs on Railway with a separate staging and production setup, plus a management tool for the restaurant.',
+      'An ordering platform for delivery restaurants and regular dine-in restaurants. Every restaurant gets its own ordering site, and orders go straight to the restaurant, with no middleman. The API is written in .NET, the data lives in PostgreSQL with PostGIS, and everything runs on Railway with a separate staging and production setup, plus a management tool for the restaurant.',
     nextTitle: "What's next",
     nextText:
       "Stamp-card rewards that guests redeem by scanning a QR code at the counter, with a physical scanner connected straight to the API. I'm planning to supply and install the scanners for restaurants too.",
-    toolUrl: '[management tool url]',
     toolAlt: 'The ServeOps management tool',
-    toolCaption: 'The management tool restaurants use to [what they do with it].',
+    toolCaption: 'The management tool restaurants use to manage their menu, receive and follow incoming orders in real time, set their delivery area and invite their staff.',
     buildWord: 'built',
     buildTitle: 'How I built it',
     buildSteps: [
-      { text: 'Model the data', note: 'PostgreSQL + PostGIS' },
-      { text: 'Build the API', note: '.NET' },
-      { text: 'Ship it', note: 'Railway, staging + prod' },
+      {
+        text: "I listened to the problem",
+        note: "I talked with delivery restaurants and dine-in restaurants: how they take orders, where those orders get lost and what the middleman platforms cost them. Those conversations gave me the real requirements: direct orders on each restaurant's own site, delivery only within an area the restaurant defines, and a real-time order board for the kitchen.",
+      },
+      {
+        text: "I modelled the data",
+        note: "I started with the domain, not the tables: menu, options, orders, payments, loyalty, delivery zones. Every business rule lives in the model instead of being scattered through the code. One system serves many restaurants, and each one's data is isolated from the others. Delivery zones are PostGIS geometries.",
+      },
+      {
+        text: "I picked the stack and the providers",
+        note: ".NET for the API, PostgreSQL with PostGIS for the data, Redis for caching and real-time updates, Hangfire for background jobs. For the rest I chose dedicated providers, so I wouldn't reinvent what already exists:",
+        items: ["Google Identity Platform for authentication, with separate accounts for each restaurant", "Stripe for payments", "Google Maps for addresses and delivery distance", "Resend for emails", "Cloudflare R2 for menu images", "Grafana for monitoring"],
+      },
+      {
+        text: "I built the API",
+        note: "A REST API with clear rules for errors, versioning and rate limiting. Orders reach the kitchen instantly through SignalR. Background jobs, such as confirmation emails or checking payments that were never confirmed, run on Hangfire. Everything is covered by integration tests against a real PostgreSQL database. After every stage I did a code review and a security review.",
+      },
+      {
+        text: "I built the management tool",
+        note: "The dashboard where a restaurant manages its menu, opening hours, delivery zones, promotions and staff, and follows orders in real time. It was designed for busy people who use it during service, not sitting at a desk.",
+      },
+      {
+        text: "I listened to feedback",
+        note: "The first restaurants used it for real, and what they told me went straight into the roadmap: opening hours split into time slots, display-only products, loyalty cards for dine-in. Every request became a planned feature, not a rushed patch.",
+      },
+      {
+        text: "I launched it",
+        note: "On Railway, with separate staging and production environments. Database migrations are applied deliberately, and a release won't start if the database schema doesn't match it. New restaurants are added by following a written process.",
+      },
     ],
-    buildFootnote: 'one platform, many restaurants',
+    buildFootnote: "one platform, many restaurants, built together with them",
     moreWord: 'more',
     moreEyebrow: 'More work',
     moreTitle: { before: 'Also built by ', hl: 'me', after: '' },
