@@ -1,0 +1,42 @@
+import type { CSSProperties } from 'react';
+import { useI18n } from '../../i18n/context';
+import { cx, hostOf } from './utils';
+
+type FigureProps = {
+  src?: string;
+  alt?: string;
+  url?: string;
+  ratio?: string;
+  frame?: boolean;
+  caption?: string;
+  width?: number;
+  height?: number;
+  className?: string;
+};
+
+const Figure = ({ src, alt, url, ratio, frame = true, caption, width, height, className }: FigureProps) => {
+  const { t } = useI18n();
+  const style = ratio ? ({ '--ap-ratio': ratio } as CSSProperties) : undefined;
+
+  return (
+    <figure className={cx('ap-figure', !frame && 'is-plain', className)}>
+      <div className="ap-frame">
+        {frame && (
+          <div className="ap-frame-bar" aria-hidden="true">
+            <span className="ap-frame-url">{url ? hostOf(url) : ''}</span>
+          </div>
+        )}
+        {src ? (
+          <img className="ap-frame-media" src={src} alt={alt ?? ''} loading="lazy" decoding="async" width={width} height={height} style={style} />
+        ) : (
+          <div className="ap-frame-media ap-frame-empty" role="img" aria-label={alt || t.common.screenshotPlaceholder} style={style}>
+            {alt || t.common.screenshotHere}
+          </div>
+        )}
+      </div>
+      {caption && <figcaption className="ap-figcaption">{caption}</figcaption>}
+    </figure>
+  );
+};
+
+export default Figure;

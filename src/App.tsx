@@ -1,31 +1,19 @@
 import { Analytics } from '@vercel/analytics/react';
-import useScrollReveal from './hooks/useScrollReveal';
-import Topbar from './components/Topbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Stack from './components/Stack';
-import Events from './components/Events';
-import Experience from './components/Experience';
-import Resume from './components/Resume';
-import Footer from './components/Footer';
+import { ROUTES } from './config/routes';
+import LanguageProvider from './i18n/LanguageProvider';
+import CaseServeOps from './pages/CaseServeOps';
+import Home from './pages/Home';
+
+const normalize = (path: string) => (path.length > 1 ? path.replace(/\/+$/, '') : path);
 
 const App = () => {
-  useScrollReveal();
+  const path = normalize(window.location.pathname.toLowerCase());
 
   return (
-    <>
-      <Topbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Stack />
-      <Events />
-      <Experience />
-      <Resume />
-      <Footer />
+    <LanguageProvider>
+      {path === ROUTES.serveops ? <CaseServeOps /> : <Home />}
       <Analytics />
-    </>
+    </LanguageProvider>
   );
 };
 
