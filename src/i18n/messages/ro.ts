@@ -67,7 +67,7 @@ const ro: Messages = {
     eyebrow: 'După Howest',
     title: { before: 'Lucruri pe care le-am ', hl: 'construit', after: '' },
     intro: 'Trei proiecte, toate live. Deschide un card pentru povestea completă sau mergi direct la site.',
-    serveops: { summary: 'O platformă de comenzi pentru restaurante cu livrare și servire la masă.', meta: 'Live' },
+    serveops: { summary: 'Platformă SaaS care le dă restaurantelor propriul site cu comenzi online pentru livrare și ridicare, rezervări de mese, vouchere cadou și carduri de fidelitate cu ștampile scanate prin cod QR la masă, plus o tablă de comenzi în timp real pentru bucătărie.', meta: 'Live' },
     olis: { summary: 'Site, o nouă identitate online și un SEO puternic pentru un restaurant din Roeselare care servește pizza și preparate românești.', meta: 'Roeselare · live' },
     balkan: { summary: "Site cu comenzi online, carduri de fidelitate și un SEO puternic pentru o shaormerie din Roeselare care servește shaorma românească, döner și kapsalon.", meta: 'Roeselare · live' },
   },
@@ -85,7 +85,7 @@ const ro: Messages = {
       eyebrow: 'ServeOps',
       title: 'Cum funcționează ServeOps',
       steps: [
-        { text: 'Clientul comandă online', note: 'livrare sau la masă' },
+        { text: 'Clientul comandă online', note: 'livrare sau ridicare' },
         { text: 'API-ul .NET o preia', note: 'PostgreSQL + PostGIS' },
         { text: 'Restaurantul o primește', note: 'live pe Railway' },
       ],
@@ -183,7 +183,7 @@ const ro: Messages = {
     now: {
       label: 'Acum',
       title: 'Construiesc ServeOps',
-      text: 'O platformă de comenzi pentru restaurante cu livrare și servire la masă.',
+      text: 'O platformă SaaS pentru restaurante: site propriu cu comenzi online, rezervări de mese și fidelizare.',
     },
   },
   events: [
@@ -236,7 +236,7 @@ const ro: Messages = {
     laptopAlt: 'Pagina principală ServeOps pe un laptop',
     phoneAlt: 'Pagina principală ServeOps pe un telefon',
     intro:
-      'O platformă de comenzi pentru restaurante cu livrare și servire la masă. Clienții comandă online, restaurantul primește comanda. Construită pe .NET, PostgreSQL și PostGIS.',
+      'O platformă SaaS pentru restaurante: site propriu cu comenzi online pentru livrare și ridicare, rezervări de mese, vouchere cadou și carduri de fidelitate. Comenzile ajung direct în bucătărie. Construită pe .NET, PostgreSQL și PostGIS.',
     visit: 'Vizitează serveops.be',
     facts: {
       role: { label: 'Rol', value: 'Fondator & dezvoltator' },
@@ -251,7 +251,7 @@ const ro: Messages = {
     problemText: 'Restaurantele mici depindeau de platformele mari de livrare, care le luau un comision mare din fiecare comandă și păstrau pentru ele relația cu clientul. Alternativa era să ia comenzile la telefon sau pe hârtie, unde se pierd ușor și nu se vede nimic din ce se întâmplă.',
     builtTitle: 'Ce am construit',
     builtText:
-      'O platformă de comenzi pentru restaurante cu livrare și pentru restaurante obișnuite cu servire la masă. Fiecare restaurant primește propriul site de comenzi, iar comenzile intră direct la el, fără intermediari. API-ul este scris în .NET, datele stau în PostgreSQL cu PostGIS, iar totul rulează pe Railway cu medii separate de staging și producție, plus un instrument de administrare pentru restaurant.',
+      'O platformă pentru restaurante cu livrare, ridicare și rezervări de mese. Fiecare restaurant primește propriul site de comenzi, iar comenzile intră direct la el, fără intermediari. API-ul este scris în .NET, datele stau în PostgreSQL cu PostGIS, iar totul rulează pe Railway cu medii separate de staging și producție, plus un instrument de administrare pentru restaurant.',
     nextTitle: 'Ce urmează',
     nextText:
       'Carduri de fidelitate cu ștampile, pe care clienții le folosesc scanând un cod QR la tejghea, cu un scaner fizic conectat direct la API. Plănuiesc să furnizez și să instalez eu scanerele pentru restaurante.',

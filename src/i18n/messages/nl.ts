@@ -67,7 +67,7 @@ const nl: Messages = {
     eyebrow: 'Na Howest',
     title: { before: 'Dingen die ik ', hl: 'bouwde', after: '' },
     intro: 'Drie projecten, allemaal live. Open een kaart voor het volledige verhaal, of ga meteen naar de site.',
-    serveops: { summary: 'Een bestelplatform voor restaurants, voor levering en om ter plaatse te eten.', meta: 'Live' },
+    serveops: { summary: 'Een SaaS-platform dat restaurants een eigen website geeft met online bestellen voor levering en afhalen, tafelreservaties, cadeaubonnen en stempelkaarten die gasten aan tafel sparen door een QR-code te scannen, plus een realtime bestelbord voor de keuken.', meta: 'Live' },
     olis: { summary: 'Website, een nieuwe online identiteit en sterke SEO voor een restaurant in Roeselare dat pizza en Roemeense gerechten serveert.', meta: 'Roeselare · live' },
     balkan: { summary: "Website met online bestellen, een spaarprogramma en sterke SEO voor een shoarmazaak in Roeselare met Roemeense shoarma, döner en kapsalon.", meta: 'Roeselare · live' },
   },
@@ -85,7 +85,7 @@ const nl: Messages = {
       eyebrow: 'ServeOps',
       title: 'Zo werkt ServeOps',
       steps: [
-        { text: 'Gast bestelt online', note: 'levering of ter plaatse' },
+        { text: 'Gast bestelt online', note: 'levering of afhalen' },
         { text: '.NET API neemt het aan', note: 'PostgreSQL + PostGIS' },
         { text: 'Restaurant krijgt het', note: 'live op Railway' },
       ],
@@ -183,7 +183,7 @@ const nl: Messages = {
     now: {
       label: 'Nu',
       title: 'Bezig met ServeOps',
-      text: 'Een bestelplatform voor restaurants, voor levering en om ter plaatse te eten.',
+      text: 'Een SaaS-platform voor restaurants: een eigen website met online bestellen, tafelreservaties en loyaliteit.',
     },
   },
   events: [
@@ -236,7 +236,7 @@ const nl: Messages = {
     laptopAlt: 'Homepage van ServeOps op een laptop',
     phoneAlt: 'Homepage van ServeOps op een telefoon',
     intro:
-      'Een bestelplatform voor restaurants, voor levering en om ter plaatse te eten. Gasten bestellen online, het restaurant krijgt de bestelling. Gebouwd met .NET, PostgreSQL en PostGIS.',
+      'Een SaaS-platform voor restaurants: een eigen website met online bestellen voor levering en afhalen, tafelreservaties, cadeaubonnen en stempelkaarten. Bestellingen komen rechtstreeks in de keuken binnen. Gebouwd met .NET, PostgreSQL en PostGIS.',
     visit: 'Bezoek serveops.be',
     facts: {
       role: { label: 'Rol', value: 'Oprichter & developer' },
@@ -251,7 +251,7 @@ const nl: Messages = {
     problemText: 'Kleine restaurants waren afhankelijk van de grote bezorgplatformen, die op elke bestelling een hoge commissie namen en de relatie met de klant voor zichzelf hielden. Het alternatief was bestellingen aannemen via de telefoon of op papier, waar ze makkelijk verloren gaan en niemand zicht heeft op wat er gebeurt.',
     builtTitle: 'Wat ik bouwde',
     builtText:
-      'Een bestelplatform voor leverrestaurants en gewone restaurants waar je ter plaatse eet. Elk restaurant krijgt een eigen bestelsite, en de bestellingen komen rechtstreeks bij het restaurant binnen, zonder tussenpersoon. De API is geschreven in .NET, de data zit in PostgreSQL met PostGIS, en alles draait op Railway met een aparte staging- en productieomgeving, plus een beheertool voor het restaurant.',
+      'Een platform voor restaurants met levering, afhalen en tafelreservaties. Elk restaurant krijgt een eigen bestelsite, en de bestellingen komen rechtstreeks bij het restaurant binnen, zonder tussenpersoon. De API is geschreven in .NET, de data zit in PostgreSQL met PostGIS, en alles draait op Railway met een aparte staging- en productieomgeving, plus een beheertool voor het restaurant.',
     nextTitle: 'Wat volgt',
     nextText:
       'Stempelkaarten die gasten inwisselen door een QR-code te scannen aan de toog, met een fysieke scanner die rechtstreeks met de API verbonden is. Ik wil de scanners ook zelf leveren en installeren bij restaurants.',

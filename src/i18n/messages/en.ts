@@ -65,7 +65,7 @@ const en = {
     eyebrow: 'After Howest',
     title: { before: 'Things I ', hl: 'built', after: '' },
     intro: 'Three projects, all live. Open a card for the full story, or go straight to the site.',
-    serveops: { summary: 'An ordering platform for delivery and dine-in restaurants.', meta: 'Live' },
+    serveops: { summary: 'A SaaS platform that gives restaurants their own website with online ordering for delivery and pickup, table reservations, gift vouchers and stamp cards guests collect by scanning a QR code at the table, plus a live order board for the kitchen.', meta: 'Live' },
     olis: { summary: 'Website, a new online identity and strong SEO for a restaurant in Roeselare serving pizza and Romanian dishes.', meta: 'Roeselare · live' },
     balkan: { summary: "Website with online ordering, loyalty rewards and strong SEO for a shaorma shop in Roeselare serving Romanian shaorma, döner and kapsalon.", meta: 'Roeselare · live' },
   },
@@ -83,7 +83,7 @@ const en = {
       eyebrow: 'ServeOps',
       title: 'How ServeOps works',
       steps: [
-        { text: 'Guest orders online', note: 'delivery or dine-in' },
+        { text: 'Guest orders online', note: 'delivery or pickup' },
         { text: '.NET API takes it', note: 'PostgreSQL + PostGIS' },
         { text: 'Restaurant gets it', note: 'live on Railway' },
       ],
@@ -181,7 +181,7 @@ const en = {
     now: {
       label: 'Now',
       title: 'Building ServeOps',
-      text: 'An ordering platform for delivery and dine-in restaurants.',
+      text: 'A SaaS platform for restaurants: their own website with online ordering, table reservations and loyalty.',
     },
   },
   events: [
@@ -234,7 +234,7 @@ const en = {
     laptopAlt: 'ServeOps home page on a laptop',
     phoneAlt: 'ServeOps home page on a phone',
     intro:
-      'An ordering platform for delivery and dine-in restaurants. Guests order online, the restaurant gets the order. Built on .NET, PostgreSQL and PostGIS.',
+      'A SaaS platform for restaurants: their own website with online ordering for delivery and pickup, table reservations, gift vouchers and stamp cards. Orders go straight to the kitchen. Built on .NET, PostgreSQL and PostGIS.',
     visit: 'Visit serveops.be',
     facts: {
       role: { label: 'Role', value: 'Founder & developer' },
@@ -249,7 +249,7 @@ const en = {
     problemText: "Small restaurants depended on the big delivery platforms, which took a hefty commission on every order and kept the relationship with the customer for themselves. The alternative was taking orders by phone or on paper, where they get lost easily and nobody can see what's going on.",
     builtTitle: 'What I built',
     builtText:
-      'An ordering platform for delivery restaurants and regular dine-in restaurants. Every restaurant gets its own ordering site, and orders go straight to the restaurant, with no middleman. The API is written in .NET, the data lives in PostgreSQL with PostGIS, and everything runs on Railway with a separate staging and production setup, plus a management tool for the restaurant.',
+      'A platform for restaurants that deliver, offer pickup and take table bookings. Every restaurant gets its own ordering site, and orders go straight to the restaurant, with no middleman. The API is written in .NET, the data lives in PostgreSQL with PostGIS, and everything runs on Railway with a separate staging and production setup, plus a management tool for the restaurant.',
     nextTitle: "What's next",
     nextText:
       "Stamp-card rewards that guests redeem by scanning a QR code at the counter, with a physical scanner connected straight to the API. I'm planning to supply and install the scanners for restaurants too.",
