@@ -30,7 +30,8 @@ const ro: Messages = {
   },
   nav: { work: 'Proiecte', how: 'Cum funcționează', studies: 'Studii', about: 'Despre mine', contact: 'Contact', home: 'Acasă' },
   hero: {
-    eyebrow: 'Inginer full-stack junior · Deschis la oferte de muncă',
+    eyebrow: 'Inginer full-stack junior',
+    status: 'Deschis la oferte de muncă',
     title: { before: 'Construiesc site-uri, platforme SaaS și ', hl: 'API-urile', after: ' din spatele lor.' },
     intro:
       'Proaspăt absolvent de Informatică Aplicată la Howest, cu un stagiu full-stack la PlayIt. De atunci am construit o platformă de comenzi pentru restaurante și două site-uri de restaurante în Roeselare. Toate trei sunt live.',

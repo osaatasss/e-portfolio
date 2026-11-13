@@ -40,6 +40,13 @@ const HomeHero = () => {
           {t.common.downloadCv}
         </Button>
       </div>
+      <p className="mt-6 inline-flex items-center gap-2 rounded-pill bg-forest-soft px-4 py-2 text-sm font-semibold text-forest">
+        <span className="relative flex size-2" aria-hidden="true">
+          <span className="absolute inline-flex size-full rounded-pill bg-forest opacity-60 motion-safe:animate-ping" />
+          <span className="relative inline-flex size-2 rounded-pill bg-forest" />
+        </span>
+        {h.status}
+      </p>
 
       <div className="pf-stage">
         <Doodle shape="wave" width={120} height={24} style={{ left: '8%', top: -6 }} />

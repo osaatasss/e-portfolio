@@ -28,7 +28,8 @@ const en = {
   },
   nav: { work: 'Work', how: 'How it works', studies: 'Studies', about: 'About', contact: 'Contact', home: 'Home' },
   hero: {
-    eyebrow: 'Junior full-stack engineer · Open to job offers',
+    eyebrow: 'Junior full-stack engineer',
+    status: 'Open to job offers',
     title: { before: 'I build websites, SaaS platforms and the ', hl: 'APIs', after: ' behind them.' },
     intro:
       "Fresh out of Applied Computer Science at Howest, with a full-stack internship at PlayIt behind me. Since then I've built an ordering platform for restaurants and two restaurant websites in Roeselare. All three are live.",

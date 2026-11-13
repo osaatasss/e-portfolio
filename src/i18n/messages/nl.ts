@@ -30,7 +30,8 @@ const nl: Messages = {
   },
   nav: { work: 'Werk', how: 'Hoe het werkt', studies: 'Studies', about: 'Over mij', contact: 'Contact', home: 'Home' },
   hero: {
-    eyebrow: 'Junior full-stack engineer · Open voor jobaanbiedingen',
+    eyebrow: 'Junior full-stack engineer',
+    status: 'Open voor jobaanbiedingen',
     title: { before: 'Ik bouw websites, SaaS-platformen en de ', hl: "API's", after: ' erachter.' },
     intro:
       'Net afgestudeerd in Toegepaste Informatica aan Howest, met een full-stack stage bij PlayIt achter de rug. Sindsdien bouwde ik een bestelplatform voor restaurants en twee restaurantwebsites in Roeselare. Alle drie staan ze live.',
