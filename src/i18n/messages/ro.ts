@@ -69,7 +69,7 @@ const ro: Messages = {
     intro: 'Trei proiecte, toate live. Deschide un card pentru povestea completă sau mergi direct la site.',
     serveops: { summary: 'O platformă de comenzi pentru restaurante cu livrare și servire la masă.', meta: 'Live' },
     olis: { summary: 'Site, o nouă identitate online și un SEO puternic pentru un restaurant din Roeselare care servește pizza și preparate românești.', meta: 'Roeselare · live' },
-    balkan: { summary: 'Site pentru o shaormerie românească cu shaorma și döner.', meta: 'Roeselare · live' },
+    balkan: { summary: "Site cu comenzi online, carduri de fidelitate și un SEO puternic pentru o shaormerie din Roeselare care servește shaorma românească, döner și kapsalon.", meta: 'Roeselare · live' },
   },
   explained: {
     word: 'cum',
@@ -255,7 +255,12 @@ const ro: Messages = {
     nextTitle: 'Ce urmează',
     nextText:
       'Carduri de fidelitate cu ștampile, pe care clienții le folosesc scanând un cod QR la tejghea, cu un scaner fizic conectat direct la API. Plănuiesc să furnizez și să instalez eu scanerele pentru restaurante.',
-    toolAlt: 'Instrumentul de administrare ServeOps',
+    demos: {
+      label: "Alege un demo",
+      orders: { tab: "Comenzi", alt: "Instrumentul de administrare ServeOps: acceptarea unei comenzi și trecerea ei prin bucătărie" },
+      menu: { tab: "Meniu", alt: "Instrumentul de administrare ServeOps: editarea unui produs din meniu" },
+      reservations: { tab: "Rezervări", alt: "Instrumentul de administrare ServeOps: acceptarea unei rezervări și alocarea unei mese" },
+    },
     toolCaption: 'Instrumentul de administrare pe care restaurantele îl folosesc ca să-și gestioneze meniul, să primească și să urmărească în timp real comenzile care intră, să-și stabilească zona de livrare și să-și invite personalul.',
     buildWord: 'creat',
     buildTitle: 'Cum l-am construit',

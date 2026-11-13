@@ -13,22 +13,10 @@ import PageShell from '../components/layout/PageShell';
 import { Phone } from '../components/layout/Stage';
 import { COPYRIGHT, EMAIL, ROUTES, SOCIAL } from '../config/routes';
 import { caseFacts, caseFooterLinks, caseMenuLinks, caseNavLinks } from '../data/serveops';
+import ServeOpsDemos from '../components/case/ServeOpsDemos';
 import { useI18n } from '../i18n/context';
 import serveopsLaptop from '../assets/screens/serveops-laptop.webp';
 import serveopsPhone from '../assets/screens/serveops-phone.webp';
-import ordersEn from '../assets/videos/serveops-orders-en.mp4';
-import ordersEnPoster from '../assets/videos/serveops-orders-en.webp';
-import ordersNl from '../assets/videos/serveops-orders-nl.mp4';
-import ordersNlPoster from '../assets/videos/serveops-orders-nl.webp';
-import ordersRo from '../assets/videos/serveops-orders-ro.mp4';
-import ordersRoPoster from '../assets/videos/serveops-orders-ro.webp';
-import type { Lang } from '../i18n/langs';
-
-const ORDERS_DEMO: Record<Lang, { src: string; poster: string }> = {
-  en: { src: ordersEn, poster: ordersEnPoster },
-  nl: { src: ordersNl, poster: ordersNlPoster },
-  ro: { src: ordersRo, poster: ordersRoPoster },
-};
 
 const CaseContact = () => {
   const { t } = useI18n();
@@ -50,7 +38,7 @@ const CaseContact = () => {
 };
 
 const CaseServeOps = () => {
-  const { lang, t } = useI18n();
+  const { t } = useI18n();
   const cs = t.caseStudy;
 
   useEffect(() => {
@@ -113,7 +101,7 @@ const CaseServeOps = () => {
             <p>{cs.nextText}</p>
           </Prose>
           <div>
-            <Figure video={ORDERS_DEMO[lang]} url="serveops.be/orders" ratio="16 / 10" alt={cs.toolAlt} caption={cs.toolCaption} />
+            <ServeOpsDemos caption={cs.toolCaption} />
           </div>
         </div>
       </section>

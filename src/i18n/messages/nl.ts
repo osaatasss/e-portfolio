@@ -69,7 +69,7 @@ const nl: Messages = {
     intro: 'Drie projecten, allemaal live. Open een kaart voor het volledige verhaal, of ga meteen naar de site.',
     serveops: { summary: 'Een bestelplatform voor restaurants, voor levering en om ter plaatse te eten.', meta: 'Live' },
     olis: { summary: 'Website, een nieuwe online identiteit en sterke SEO voor een restaurant in Roeselare dat pizza en Roemeense gerechten serveert.', meta: 'Roeselare · live' },
-    balkan: { summary: 'Website voor een Roemeense shoarma- en dönerzaak.', meta: 'Roeselare · live' },
+    balkan: { summary: "Website met online bestellen, een spaarprogramma en sterke SEO voor een shoarmazaak in Roeselare met Roemeense shoarma, döner en kapsalon.", meta: 'Roeselare · live' },
   },
   explained: {
     word: 'hoe',
@@ -255,7 +255,12 @@ const nl: Messages = {
     nextTitle: 'Wat volgt',
     nextText:
       'Stempelkaarten die gasten inwisselen door een QR-code te scannen aan de toog, met een fysieke scanner die rechtstreeks met de API verbonden is. Ik wil de scanners ook zelf leveren en installeren bij restaurants.',
-    toolAlt: 'De beheertool van ServeOps',
+    demos: {
+      label: "Kies een demo",
+      orders: { tab: "Bestellingen", alt: "De beheertool van ServeOps: een bestelling aannemen en door de keuken sturen" },
+      menu: { tab: "Menu", alt: "De beheertool van ServeOps: een product in het menu aanpassen" },
+      reservations: { tab: "Reservaties", alt: "De beheertool van ServeOps: een reservatie aannemen en een tafel toewijzen" },
+    },
     toolCaption: 'De beheertool die restaurants gebruiken om hun menu te beheren, binnenkomende bestellingen in realtime te ontvangen en op te volgen, hun leverzone in te stellen en hun personeel uit te nodigen.',
     buildWord: 'gebouwd',
     buildTitle: 'Zo bouwde ik het',

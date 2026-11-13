@@ -6,11 +6,13 @@ type FrameVideoProps = {
   poster: string;
   label: string;
   style?: CSSProperties;
+  /** Called when the clip ends. Without it the clip loops. */
+  onEnded?: () => void;
 };
 
 const prefersReducedMotion = () => !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-const FrameVideo = ({ src, poster, label, style }: FrameVideoProps) => {
+const FrameVideo = ({ src, poster, label, style, onEnded }: FrameVideoProps) => {
   const { t } = useI18n();
   const ref = useRef<HTMLVideoElement>(null);
   const userPaused = useRef(false);
@@ -52,11 +54,12 @@ const FrameVideo = ({ src, poster, label, style }: FrameVideoProps) => {
         poster={poster}
         aria-label={label}
         muted
-        loop
+        loop={!onEnded}
         playsInline
         preload="none"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
+        onEnded={onEnded}
       />
       <button
         type="button"

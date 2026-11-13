@@ -5,7 +5,7 @@ import { cx, hostOf } from './utils';
 
 type FigureProps = {
   src?: string;
-  video?: { src: string; poster: string };
+  video?: { src: string; poster: string; onEnded?: () => void };
   alt?: string;
   url?: string;
   ratio?: string;
@@ -29,7 +29,7 @@ const Figure = ({ src, video, alt, url, ratio, frame = true, caption, width, hei
           </div>
         )}
         {video ? (
-          <FrameVideo key={video.src} src={video.src} poster={video.poster} label={alt ?? ''} style={style} />
+          <FrameVideo key={video.src} src={video.src} poster={video.poster} label={alt ?? ''} style={style} onEnded={video.onEnded} />
         ) : src ? (
           <img className="ap-frame-media" src={src} alt={alt ?? ''} loading="lazy" decoding="async" width={width} height={height} style={style} />
         ) : (

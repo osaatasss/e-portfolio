@@ -67,7 +67,7 @@ const en = {
     intro: 'Three projects, all live. Open a card for the full story, or go straight to the site.',
     serveops: { summary: 'An ordering platform for delivery and dine-in restaurants.', meta: 'Live' },
     olis: { summary: 'Website, a new online identity and strong SEO for a restaurant in Roeselare serving pizza and Romanian dishes.', meta: 'Roeselare · live' },
-    balkan: { summary: 'Website for a Romanian shaorma and döner shop.', meta: 'Roeselare · live' },
+    balkan: { summary: "Website with online ordering, loyalty rewards and strong SEO for a shaorma shop in Roeselare serving Romanian shaorma, döner and kapsalon.", meta: 'Roeselare · live' },
   },
   explained: {
     word: 'how',
@@ -253,7 +253,12 @@ const en = {
     nextTitle: "What's next",
     nextText:
       "Stamp-card rewards that guests redeem by scanning a QR code at the counter, with a physical scanner connected straight to the API. I'm planning to supply and install the scanners for restaurants too.",
-    toolAlt: 'The ServeOps management tool',
+    demos: {
+      label: "Choose a demo",
+      orders: { tab: "Orders", alt: "The ServeOps management tool: accepting an order and moving it through the kitchen" },
+      menu: { tab: "Menu", alt: "The ServeOps management tool: editing a product on the menu" },
+      reservations: { tab: "Reservations", alt: "The ServeOps management tool: accepting a booking and assigning a table" },
+    },
     toolCaption: 'The management tool restaurants use to manage their menu, receive and follow incoming orders in real time, set their delivery area and invite their staff.',
     buildWord: 'built',
     buildTitle: 'How I built it',
