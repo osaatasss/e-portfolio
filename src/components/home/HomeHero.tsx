@@ -1,9 +1,8 @@
 import Button from '../ds/Button';
 import FactsRow from '../ds/FactsRow';
-import Figure from '../ds/Figure';
 import { HlText, Note, Sticker } from '../layout/Decor';
 import Doodle from '../layout/Doodle';
-import { DeviceCaption, Phone } from '../layout/Stage';
+import { DeviceCaption, Laptop, Phone } from '../layout/Stage';
 import { CV_HREF, SOCIAL } from '../../config/routes';
 import { heroFacts } from '../../data/home';
 import { useI18n } from '../../i18n/context';
@@ -54,22 +53,26 @@ const HomeHero = () => {
         <Note size="xl" style={{ right: '3%', bottom: '16%' }}>
           {h.note}
         </Note>
-        <div className="pf-devices">
-          <div className="pf-dev">
-            <Sticker style={{ top: -12, right: 4 }}>{h.live}</Sticker>
-            <Phone src={olisPhone} alt={h.devices.olisAlt} />
+        <div className="pf-devices is-cluster">
+          <div className="pf-dev pf-dev-side is-left">
+            <div className="pf-dev-tilt">
+              <Sticker style={{ top: -14, right: -4 }}>{h.live}</Sticker>
+              <Phone src={olisPhone} alt={h.devices.olisAlt} />
+            </div>
             <DeviceCaption name="Oli's House" href={SOCIAL.olis} role={h.devices.olisRole} />
           </div>
           <div className="pf-dev pf-dev-main">
-            <Sticker tone="forest" style={{ top: 52, left: -14, transform: 'rotate(-7deg)' }}>
+            <Sticker tone="forest" style={{ top: -16, left: '20%', transform: 'rotate(-5deg)' }}>
               {h.ownSaas}
             </Sticker>
-            <Figure src={serveopsLaptop} url="serveops.be" ratio="16 / 10" alt={h.devices.serveopsAlt} width={1200} height={750} />
+            <Laptop src={serveopsLaptop} alt={h.devices.serveopsAlt} width={1200} height={750} />
             <DeviceCaption name="ServeOps" href={SOCIAL.serveops} role={h.devices.serveopsRole} />
           </div>
-          <div className="pf-dev">
-            <Sticker style={{ top: -12, left: 4, transform: 'rotate(-8deg)' }}>{h.live}</Sticker>
-            <Phone src={balkanPhone} alt={h.devices.balkanAlt} />
+          <div className="pf-dev pf-dev-side is-right">
+            <div className="pf-dev-tilt">
+              <Sticker style={{ top: -14, left: -4, transform: 'rotate(-8deg)' }}>{h.live}</Sticker>
+              <Phone src={balkanPhone} alt={h.devices.balkanAlt} />
+            </div>
             <DeviceCaption name="Balkan Donner" href={SOCIAL.balkan} role={h.devices.balkanRole} />
           </div>
         </div>

@@ -3,14 +3,13 @@ import Button from '../components/ds/Button';
 import Chalkboard from '../components/ds/Chalkboard';
 import ContactFooter from '../components/ds/ContactFooter';
 import FactsRow from '../components/ds/FactsRow';
-import Figure from '../components/ds/Figure';
 import ProjectCard from '../components/ds/ProjectCard';
 import Prose from '../components/ds/Prose';
 import Tag from '../components/ds/Tag';
 import { BorderWord, HlText, Note } from '../components/layout/Decor';
 import Doodle from '../components/layout/Doodle';
 import PageShell from '../components/layout/PageShell';
-import { Phone } from '../components/layout/Stage';
+import { Laptop, Phone } from '../components/layout/Stage';
 import { COPYRIGHT, EMAIL, ROUTES, SOCIAL } from '../config/routes';
 import { caseFacts, caseFooterLinks, caseMenuLinks, caseNavLinks } from '../data/serveops';
 import ServeOpsDemos from '../components/case/ServeOpsDemos';
@@ -69,7 +68,7 @@ const CaseServeOps = () => {
           </Note>
           <div className="pf-devices is-two">
             <div className="pf-dev pf-dev-main">
-              <Figure src={serveopsLaptop} url="serveops.be" ratio="16 / 10" alt={cs.laptopAlt} width={1200} height={750} />
+              <Laptop src={serveopsLaptop} alt={cs.laptopAlt} width={1200} height={750} />
             </div>
             <div className="pf-dev">
               <Phone src={serveopsPhone} alt={cs.phoneAlt} />

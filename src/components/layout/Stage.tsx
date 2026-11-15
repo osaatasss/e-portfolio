@@ -3,7 +3,26 @@ import { NewTabNote } from '../ds/Primitives';
 
 export const Phone = ({ alt, src }: { alt: string; src?: string }) => (
   <div className="pf-phone">
-    <Figure frame={false} ratio="9 / 19" alt={alt} src={src} />
+    <div className="pf-phone-body">
+      <div className="pf-phone-screen">
+        <span className="pf-phone-bar" aria-hidden="true">
+          <span>9:41</span>
+          <span className="pf-phone-batt" />
+        </span>
+        <Figure frame={false} ratio="9 / 17.6" alt={alt} src={src} />
+      </div>
+    </div>
+  </div>
+);
+
+type LaptopProps = { alt: string; src?: string; width?: number; height?: number };
+
+export const Laptop = ({ alt, src, width, height }: LaptopProps) => (
+  <div className="pf-laptop">
+    <div className="pf-laptop-lid">
+      <Figure frame={false} ratio="16 / 10" alt={alt} src={src} width={width} height={height} />
+    </div>
+    <div className="pf-laptop-base" aria-hidden="true" />
   </div>
 );
 
