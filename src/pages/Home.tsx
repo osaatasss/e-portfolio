@@ -17,7 +17,7 @@ const HomeContact = () => {
   const c = t.contact;
 
   return (
-    <div id="contact" className="pf-wrap pf-dood-host scroll-mt-6">
+    <div id="contact" className="pf-wrap pf-dood-host pf-contact scroll-mt-6">
       <BorderWord word={c.word} side="left" style={{ left: 0 }} />
       <Doodle shape="plane" tone="forest" width={150} height={88} style={{ right: '4%', top: 88 }} />
       <ContactFooter

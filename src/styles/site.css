@@ -176,7 +176,7 @@
 /* ---------- doodles: hand-drawn strokes in the background ---------- */
 .pf-section, .pf-hero, .pf-dood-host, .pf-section > .pf-wrap { position: relative; }
 .pf-section { overflow-x: clip; }
-main { overflow-x: clip; }
+main, .pf-contact { overflow-x: clip; }
 .pf-doodle { position: absolute; z-index: 0; pointer-events: none; fill: none; stroke: var(--line-strong); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .7; overflow: visible; }
 .pf-doodle.is-forest { stroke: var(--forest); opacity: .55; }
 .pf-doodle .fill { fill: var(--forest-soft); }
@@ -267,3 +267,8 @@ main { overflow-x: clip; }
 .pf-bw { display: inline-block; filter: url(#pf-outline); will-change: transform; }
 .pf-border-word .pf-dot, .pf-stage-word .pf-dot { display: inline-block; transform-origin: 50% 85%; }
 .pf-outline-ink { flood-color: var(--line-strong); flood-opacity: .55; }
+
+@media (max-width: 360px) {
+  .pf-wrap { padding: 0 var(--space-4); }
+  .pf-brand { font-size: 19px; }
+}
