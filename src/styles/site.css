@@ -59,7 +59,7 @@
 .pf-lang-opt[aria-current="true"] .pf-lang-optcode { color: var(--forest); }
 
 /* hero */
-.pf-hero { padding: var(--space-16) 0 0; }
+.pf-hero { padding-top: var(--space-16); }
 .pf-hero-intro { margin: var(--space-6) 0 0; max-width: 60ch; font-size: 20px; line-height: 1.6; color: var(--ink-muted); }
 .pf-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); margin-top: var(--space-8); }
 .pf-actions-btns { display: flex; flex-wrap: wrap; gap: var(--space-3); }
