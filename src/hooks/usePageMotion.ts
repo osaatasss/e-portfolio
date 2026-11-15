@@ -77,9 +77,6 @@ const usePageMotion = (rootRef: RefObject<HTMLElement | null>, mode: MotionMode)
     if (mode === 'auto' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
 
     const ctx = gsap.context(() => {
-      const bar = root.querySelector('.pf-progress');
-      if (bar) gsap.to(bar, { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } });
-
       const stage = root.querySelector<HTMLElement>('.pf-stage');
       if (stage) setupStage(stage);
 

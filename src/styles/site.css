@@ -214,7 +214,23 @@ main { overflow-x: clip; }
 .pf-note-xl { color: var(--tomato-ink); }
 .pf-dot { color: var(--tomato); -webkit-text-stroke: 0; }
 .pf-doodle.is-tomato { stroke: var(--tomato); opacity: .9; }
-.pf-progress { position: absolute; left: 0; bottom: -1px; width: 100%; height: 3px; background: var(--tomato); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+/* desktop: a chalk stroke under the nav link of the section being read */
+.pf-nav { position: relative; }
+.pf-nav-mark { position: absolute; left: 0; bottom: 3px; width: var(--mark-w); height: 9px; color: var(--tomato); transform: translateX(var(--mark-x)); opacity: 0; pointer-events: none; transition: opacity 200ms ease; }
+.pf-nav-mark.is-on { opacity: 1; }
+.pf-nav-mark.is-sliding { transition: opacity 200ms ease, transform 380ms cubic-bezier(.2, .8, .2, 1), width 380ms cubic-bezier(.2, .8, .2, 1); }
+.pf-nav-mark svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.pf-nav-mark path { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+/* mobile: the menu button's ring fills as you read, and nudges at the bottom */
+.pf-menu-btn { position: relative; }
+.pf-read-ring { position: absolute; inset: -1px; width: calc(100% + 2px); height: calc(100% + 2px); overflow: visible; transform: rotate(-90deg); pointer-events: none; }
+.pf-read-ring circle { fill: none; stroke: var(--tomato); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.pf-menu-btn.is-read { animation: pf-nudge 600ms ease-out; }
+@keyframes pf-nudge { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 50% { transform: rotate(8deg); } 75% { transform: rotate(-4deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .pf-nav-mark.is-sliding { transition: opacity 200ms ease; }
+  .pf-menu-btn.is-read { animation: none; }
+}
 
 
 /* border-word outline: an SVG filter traces the outside of the letters (no crossing lines where strokes overlap) */

@@ -1,4 +1,6 @@
-import { useCallback, useState, type KeyboardEvent } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
+import useActiveSection from '../../hooks/useActiveSection';
+import useReadProgress from '../../hooks/useReadProgress';
 import useTheme from '../../hooks/useTheme';
 import { useI18n } from '../../i18n/context';
 import LanguageMenu from './LanguageMenu';
@@ -25,12 +27,45 @@ const MoonIcon = () => (
   </svg>
 );
 
+type Mark = { x: number; w: number; on: boolean; slide: boolean };
+
+/** How far the chalk mark sits in from each side of the link, so it underlines the label, not the pill. */
+const MARK_INSET = 12;
+
 const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProps) => {
   const { isDark, toggleTheme } = useTheme();
   const { t } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [mark, setMark] = useState<Mark>({ x: 0, w: 0, on: false, slide: false });
+  const navRef = useRef<HTMLElement>(null);
+  const ringRef = useRef<SVGCircleElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
   const menuId = `site-menu-${idSuffix}`;
+  const active = useActiveSection(navLinks.map((n) => n.href));
+  const labels = navLinks.map((n) => n.label).join('|');
+  useReadProgress(ringRef, menuBtnRef);
+
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const place = () => {
+      const link = active ? nav.querySelector<HTMLElement>(`a[href="${active}"]`) : null;
+      if (!link || !link.offsetWidth) {
+        setMark((m) => (m.on ? { ...m, on: false, slide: false } : m));
+        return;
+      }
+      const box = nav.getBoundingClientRect();
+      const r = link.getBoundingClientRect();
+      const x = Math.round(r.left - box.left + MARK_INSET);
+      const w = Math.round(r.width - MARK_INSET * 2);
+      setMark((m) => (m.on && m.x === x && m.w === w ? m : { x, w, on: true, slide: m.on }));
+    };
+    place();
+    const resized = new ResizeObserver(place);
+    resized.observe(nav);
+    return () => resized.disconnect();
+  }, [active, labels]);
   const closeMenu = () => setMenuOpen(false);
   const onLangOpenChange = useCallback((open: boolean) => setLangOpen(open), []);
 
@@ -47,7 +82,7 @@ const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProp
         <a className="pf-brand" href={brandHref}>
           Robert Apostol
         </a>
-        <nav className="pf-nav" aria-label={t.header.mainNav}>
+        <nav ref={navRef} className="pf-nav" aria-label={t.header.mainNav}>
           <ul>
             {navLinks.map((n) => (
               <li key={n.href}>
@@ -57,6 +92,15 @@ const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProp
               </li>
             ))}
           </ul>
+          <span
+            className={`pf-nav-mark${mark.on ? ' is-on' : ''}${mark.slide ? ' is-sliding' : ''}`}
+            style={{ '--mark-x': `${mark.x}px`, '--mark-w': `${mark.w}px` } as CSSProperties}
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false">
+              <path d="M2 6 C 25 2, 60 9, 98 4" />
+            </svg>
+          </span>
         </nav>
         <div className="pf-header-tools">
           <LanguageMenu idSuffix={idSuffix} open={langOpen} onOpenChange={onLangOpenChange} />
@@ -67,6 +111,7 @@ const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProp
             {t.header.cta}
           </a>
           <button
+            ref={menuBtnRef}
             type="button"
             className="pf-icon-btn pf-menu-btn"
             aria-expanded={menuOpen}
@@ -76,6 +121,9 @@ const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProp
               setLangOpen(false);
             }}
           >
+            <svg className="pf-read-ring" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+              <circle ref={ringRef} cx="22" cy="22" r="21" pathLength={1} />
+            </svg>
             {menuOpen ? (
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
                 <path d="M6 6l12 12M18 6L6 18" />
@@ -111,7 +159,6 @@ const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProp
           </div>
         </nav>
       )}
-      <div className="pf-progress" aria-hidden="true" />
     </header>
   );
 };
