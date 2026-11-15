@@ -94,7 +94,7 @@ const SiteHeader = ({ idSuffix, brandHref, navLinks, menuLinks }: SiteHeaderProp
           </ul>
           <span
             className={`pf-nav-mark${mark.on ? ' is-on' : ''}${mark.slide ? ' is-sliding' : ''}`}
-            style={{ '--mark-x': `${mark.x}px`, '--mark-w': `${mark.w}px` } as CSSProperties}
+            style={{ '--mark-x': `${mark.x}px`, '--mark-s': mark.w / 100 } as CSSProperties}
             aria-hidden="true"
           >
             <svg viewBox="0 0 100 10" preserveAspectRatio="none" focusable="false">
